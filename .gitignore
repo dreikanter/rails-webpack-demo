@@ -17,6 +17,8 @@
 # Static files
 /public/uploads
 /public/assets
+/public/javascripts
+/public/stylesheets
 
 # Ansible
 *.retry
@@ -24,3 +26,5 @@
 
 # Vagrant
 .vagrant
+
+node_modules

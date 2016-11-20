@@ -1,0 +1,9 @@
+@import "test";
+
+.hello {
+  background-color: green;
+
+  .world {
+    color: red;
+  }
+}
