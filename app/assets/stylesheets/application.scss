@@ -1,9 +1,7 @@
-@import "test";
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
-.hello {
-  background-color: green;
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-  .world {
-    color: red;
-  }
+h1 {
+  color: green;
 }
