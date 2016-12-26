@@ -1,7 +1,2 @@
-import moment from "moment"
-import "bootstrap-sass"
-import "jquery-ujs"
-import "jquery-ui"
-import Turbolinks from "turbolinks"
-
-Turbolinks.start()
+// Use thif file for Sprockets directives to require gem-distributed JS
+//= require_self

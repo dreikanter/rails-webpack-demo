@@ -1,4 +1,4 @@
-# Rails + WebPack Demo Project
+# RailsZero
 
 Install dependencies:
 

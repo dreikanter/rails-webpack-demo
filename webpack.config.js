@@ -7,7 +7,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   context: __dirname + "/app/assets",
   entry: {
-    application: ["./javascripts/application.js", "./stylesheets/application.scss"]
+    application: [
+      "./javascripts/application.js",
+      "./stylesheets/application.scss"
+    ],
+    admin: [
+      "./stylesheets/admin.scss"
+    ]
   },
   output: {
     path: __dirname + "/public/webpack",
