@@ -1,30 +1,44 @@
-.DS_Store
-
-# Bundler
-/.bundle
+#
+# WARNING: /config/application.yml* and /config/config_rsa* should be excluded
+# from production repo
+#
 
 # Configuration
-/config/application.yml
-/config/application.yml.backup
-/config/passiondig_rsa
-/config/passiondig_rsa.pub
+
+# /config/application.yml*
+# /config/secrets_rsa
+# /config/secrets_rsa.pub
+
+# Bundler
+
+/.bundle
 
 # Temporary files and logs
+
 /log/*
 !/log/.keep
 /tmp
 
 # Static files
+
 /public/uploads
 /public/assets
 /public/javascripts
 /public/stylesheets
 
 # Ansible
+
 *.retry
 *.pyc
 
 # Vagrant
+
 .vagrant
 
+# NPM
+
 node_modules
+
+# Misc
+
+.DS_Store
