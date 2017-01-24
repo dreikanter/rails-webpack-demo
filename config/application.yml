@@ -1,0 +1,44 @@
+---
+app_name: "railszero"
+
+#
+# Rails secrets
+#
+
+secret_key_base: "3db84e1636a88fb168f46769ee6127897d695c8c92b2b45d124f1f81d378a2060ec6f5023359fdd502c466b5374e095a4eb975be8cbdec1cfd56e95e21fb75e7"
+secret_token: "7227a20d3453bb91ef4238ad4e282ddb037cb4247b3e2b25d28e9fa45aaafc7500c5857122f579aff40e71868538266b659100cdaea8dce8c99d8691eebc4ed2"
+
+#
+# Postgres configuration for Vagrant
+#
+
+postgres_host: "localhost"
+postgres_database: "railszero_development"
+postgres_username: "railszero"
+postgres_password: "railszero"
+postgres_port: "5432"
+
+#
+# Mandrill SMTP
+#
+
+smtp_user_name: "railszero@example.com"
+smtp_password: "secret"
+smtp_address: "smtp.mandrillapp.com"
+smtp_domain: "railszero.example.com"
+smtp_enable_starttls_auto: "true"
+smtp_authentication: "login"
+smtp_port: "587"
+
+#
+# ActionMailer
+#
+
+action_mailer_url_host: "railszero.dev"
+action_mailer_url_port: "3000"
+
+#
+# Sidekiq
+#
+
+sidekiq_redis_url: "redis://localhost:6379"
