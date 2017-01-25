@@ -1,4 +1,4 @@
-require_relative '../service/secrets_vault'
+require_relative '../secrets_vault'
 
 namespace :secrets do
   desc 'Encrypt allication.yml'

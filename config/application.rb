@@ -8,8 +8,9 @@ Bundler.require(*Rails.groups)
 
 module RailsZero
   class Application < Rails::Application
-    config.autoload_paths << Rails.root.join('app')
-    config.autoload_paths << Rails.root.join('lib')
+    %w(app lib).each do |path|
+      config.autoload_paths << Rails.root.join(path)
+    end
 
     config.active_job.queue_adapter = :sidekiq
 
