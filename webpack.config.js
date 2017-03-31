@@ -1,62 +1,36 @@
-"use strict";
+'use strict';
 
-const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+
+const production = process.env.TARGET === 'production';
+const bundleNameFormat = production ? '[name]-[chunkhash].js' : '[name].js';
+const devServerPort = 3808;
+const publicPath = production ? '/dist/' : '//localhost:' + devServerPort + '/dist/'
+
 
 module.exports = {
-  context: __dirname + "/app/assets",
+  // Base path for all other paths in configuration
+  context: __dirname,
+
   entry: {
     application: [
-      "./javascripts/application.js",
-      "./stylesheets/application.scss"
-    ],
-    admin: [
-      "./stylesheets/admin.scss"
+      path.join(__dirname, 'client', 'application.js')
     ]
   },
+
   output: {
-    path: __dirname + "/public/webpack",
-    filename: "javascripts/[name].js",
+    path: path.join(__dirname, 'public', 'dist'),
+    publicPath: '/dist/',
+    filename: bundleNameFormat
   },
-  devtool: "source-map",
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel",
-        query: {
-          presets: ["es2015"]
-        }
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style", "css")
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style", "css?sourceMap!sass")
-      },
-      {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: "url?limit=100000"
-      },
-      {
-        test: /\.(jpg|png|svg)$/,
-        loader: "file?name=images/[name].[ext]"
-      }
-    ]
+
+  // Relevant for TARGET=development only
+  devServer: {
+    port: devServerPort,
+    headers: { 'Access-Control-Allow-Origin': '*' }
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
-    }),
-    new ExtractTextPlugin("stylesheets/[name].css"),
-    new CleanWebpackPlugin(["public/webpack"], {
-      verbose: true,
-      dry: true
-    })
-  ]
+
+  // https://webpack.js.org/configuration/devtool/#components/sidebar/sidebar.jsx
+  devtool: 'cheap-module-eval-source-map'
 }
