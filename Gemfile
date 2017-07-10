@@ -12,9 +12,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '~> 3.0', '>= 3.0.4'
 gem 'webpacker'
 
-gem 'autoprefixer-rails', '~> 6.7'
-gem 'react-rails', '~> 2.2', '>= 2.2.1'
-
 group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platform: :mri
@@ -53,8 +50,9 @@ group :darwin do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'autoprefixer-rails', '~> 6.7'
+gem 'react-rails', '~> 2.2', '>= 2.2.1'
 gem 'pg', '~> 0.19.0'
-gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'lograge', '~> 0.5.1'
 gem 'sidekiq', '~> 4.2', '>= 4.2.9'
 gem 'oj', '~> 2.17', '>= 2.17.4'
