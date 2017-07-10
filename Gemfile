@@ -11,6 +11,8 @@ gem 'uglifier', '~> 3.0', '>= 3.0.4'
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'therubyracer', platforms: :ruby
 
+gem 'react-rails', '~> 2.2', '>= 2.2.1'
+
 group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platform: :mri
