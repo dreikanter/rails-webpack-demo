@@ -1,22 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.0', '>= 5.0.1'
-gem 'puma', '~> 3.6', '>= 3.6.2'
-gem 'jbuilder', '~> 2.6', '>= 2.6.1'
-gem 'redis', '~> 3.3', '>= 3.3.3'
-gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
-gem 'sass-rails', '~> 5.0', '>= 5.0.6'
+gem 'rails', '~> 5.1.2'
+gem 'sqlite3'
+gem 'puma', '~> 3.7'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '~> 3.0', '>= 3.0.4'
-gem 'autoprefixer-rails', '~> 6.7'
-gem 'therubyracer', platforms: :ruby
+gem 'webpacker'
 
+gem 'autoprefixer-rails', '~> 6.7'
 gem 'react-rails', '~> 2.2', '>= 2.2.1'
 
 group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platform: :mri
-  gem 'bullet', '~> 5.4', '>= 5.4.2'
+  gem 'bullet', '~> 5.5', '>= 5.5.1'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem 'derailed_benchmarks', group: :development
   gem 'factory_girl_rails', '~> 4.0'
@@ -53,7 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg', '~> 0.19.0'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
-gem 'lograge', '~> 0.4.1'
+gem 'lograge', '~> 0.5.1'
 gem 'sidekiq', '~> 4.2', '>= 4.2.9'
 gem 'oj', '~> 2.17', '>= 2.17.4'
 gem 'js-routes', '~> 1.3'
